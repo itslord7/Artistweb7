@@ -1,0 +1,8 @@
+{
+  "name": "خيال - صانع اللوحات الفنية",
+  "description": "منصة إبداعية تستخدم الذاء الاصطناعي لتحويل كلماتك إلى لوحات فنية مذهلة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "AI Image Generation"
+  ]
+}
