@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ذكرياتي — سجّل لحظاتك الجميلة</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <h1 class="logo">📸 ذكرياتي</h1>
+      <div id="authArea"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>سجّل ذكرياتك قبل أن تُنسى</h2>
+      <p id="modeNote" class="mode-note"></p>
+    </section>
+
+    <section class="card form-card">
+      <h3>➕ ذكرى جديدة</h3>
+      <form id="memoryForm">
+        <div class="row">
+          <div class="field">
+            <label for="title">العنوان</label>
+            <input id="title" type="text" maxlength="100" placeholder="مثال: أول يوم في الجامعة" required />
+          </div>
+          <div class="field">
+            <label for="date">التاريخ</label>
+            <input id="date" type="date" required />
+          </div>
+          <div class="field">
+            <label for="mood">المشاعر</label>
+            <select id="mood">
+              <option value="سعيدة 😄">سعيدة 😄</option>
+              <option value="مميزة ⭐">مميزة ⭐</option>
+              <option value="حانية 🥰">حانية 🥰</option>
+              <option value="مضحكة 😂">مضحكة 😂</option>
+              <option value="هادئة 🌙">هادئة 🌙</option>
+              <option value="حزينة 😢">حزينة 😢</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="text">الذكرى</label>
+          <textarea id="text" rows="4" maxlength="5000" placeholder="اكتب ما حدث، من كان معك، وكيف شعرت..." required></textarea>
+        </div>
+        <button type="submit" class="btn primary">حفظ الذكرى</button>
+        <span id="formMsg" class="form-msg"></span>
+      </form>
+    </section>
+
+    <section class="memories-section">
+      <div class="memories-head">
+        <h3>🗂️ ذكرياتي</h3>
+        <select id="filterMood" class="filter">
+          <option value="">كل المشاعر</option>
+          <option value="سعيدة 😄">سعيدة 😄</option>
+          <option value="مميزة ⭐">مميزة ⭐</option>
+          <option value="حانية 🥰">حانية 🥰</option>
+          <option value="مضحكة 😂">مضحكة 😂</option>
+          <option value="هادئة 🌙">هادئة 🌙</option>
+          <option value="حزينة 😢">حزينة 😢</option>
+        </select>
+      </div>
+      <div id="memoriesList" class="memories-grid"></div>
+      <p id="emptyMsg" class="empty hidden">لا توجد ذكريات بعد — ابدأ بتسجيل أول ذكرى! ✨</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>ذكرياتي — بدون حساب تُحفظ ذكرياتك في متصفحك فقط، ومع حساب تُحفظ بأمان على السيرفر.</p>
+    </div>
+  </footer>
+
+  <div id="authModal" class="modal hidden">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" data-close>✕</button>
+      <div class="tabs">
+        <button class="tab active" data-tab="login">تسجيل الدخول</button>
+        <button class="tab" data-tab="register">حساب جديد</button>
+      </div>
+      <form id="authForm">
+        <div class="field">
+          <label for="authUsername">اسم المستخدم</label>
+          <input id="authUsername" type="text" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="authPassword">كلمة المرور</label>
+          <input id="authPassword" type="password" autocomplete="current-password" required />
+        </div>
+        <p id="authMsg" class="form-msg"></p>
+        <button type="submit" class="btn primary" id="authSubmit">دخول</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
